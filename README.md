@@ -1,5 +1,5 @@
 # React/Redux Code Challenge
-This challenge was created to test your ability to code in a React environment. 
+This challenge was created to test your ability to code in a React environment. For any questions, feel free to reach out at Alex.Jeng@sony.com
 
 ## Table of Contents
 - [Getting Started](#getting-started)
@@ -24,7 +24,7 @@ This challenge was created to test your ability to code in a React environment.
 - Some boilerplate code has been given to you for starters. Feel free to keep or remove whatever you want.
 - Create the widgets you see in the image below in the HomePage component. 
     - The widget titled _Create New Company_ should have the behavior of adding new companies to the widget entitled _Companies_
-    - The widget titled _Create New Person_ should add employees to a company's roster of employees. The data for the employee should pulled from [random user API](https://randomuser.me/). If no companies are entered, this widget should be disabled or not visible, your choice.
+    - The widget titled _Create New Person_ should add employees to a company's roster of employees. The data for the employee should pulled from [random user API](https://randomuser.me/). **You do not need the name and address field as shown in the photo, all data should be pulled from the API.** If no companies are entered, this widget should be disabled or not visible, your choice.
     - The widget title _Companies_ should present all of the companies that have been entered, each with their own card.
     - The company cards should provide the data entered from the _Create New Company_ widget, and also have a link to the DetailsPage.
     The Details page will then display the respective companies information on click/key press.
