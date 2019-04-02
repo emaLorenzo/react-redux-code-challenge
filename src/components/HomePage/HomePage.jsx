@@ -1,38 +1,40 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import './styles.less';
+import React from 'react';
+import CompaniesList from 'components/CompaniesList';
+import FormCompany from 'components/FormCompany';
+import FormEmployee from 'components/FormEmployee';
+import styled from 'styled-components';
 
-const propTypes = {
-	increment: PropTypes.func.isRequired,
-	decrement: PropTypes.func.isRequired,
-	resetNumberToZero: PropTypes.func.isRequired,
-};
+const Container = styled.div`
+	background-color: #FAFAFA;
+	padding: 60px;
+	display: flex;
+	flex-direction: row;
+`
+const CompaniesContainer = styled.div`
+	flex: 7;
+`
+const FormsContainer = styled.div`
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	padding-left: 2rem;
+`
+const FormCompanyContainer = styled.div`
+	margin-bottom: 2rem;
+`
 
-class HomePage extends Component {
-	render() {
-		const {	increment, decrement, resetNumberToZero } = this.props;
-		return (
-			<React.Fragment>
-				<div className="home__wrapper">
-					<div className="home__abacus">
-						<button	onClick={increment}>
-							Increment
-						</button>
-						<button	onClick={decrement}>
-							Decrement
-						</button>
-						<button	onClick={resetNumberToZero}>
-							Reset Number
-						</button>
-					</div>
-					<div>
-						Code for Homepage goes here!
-					</div>
-				</div>
-			</React.Fragment>
-		);
-	}
-}
+const HomePage = () => (
+	<Container>
+		<CompaniesContainer>
+			<CompaniesList />
+		</CompaniesContainer>
+		<FormsContainer>
+			<FormCompanyContainer>
+				<FormCompany />
+			</FormCompanyContainer>
+			<FormEmployee />
+		</FormsContainer>
+	</Container>
+);
 
-HomePage.propTypes = propTypes;
 export default HomePage;

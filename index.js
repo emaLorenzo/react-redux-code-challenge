@@ -1,19 +1,24 @@
+import "regenerator-runtime/runtime";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { devToolsEnhancer } from 'redux-devtools-extension';
-import rootReducer from 'store/features/reducers'
+import rootReducer from 'config/rootReducer'
+import rootSagas from 'config/rootSagas';
+import createSagaMiddleware from 'redux-saga';
 import './src/index.less';
 import App from 'components/App';
 
-/*
-As you can see, there's no middleware included here.
-So to make things a little easier for you I've added the redux-devtools-extension.
-documentation found here: https://github.com/zalmoxisus/redux-devtools-extension
-*/
+const sagaMiddleware = createSagaMiddleware();
 
-let store = createStore(rootReducer, devToolsEnhancer());
+let store = createStore(
+  rootReducer,
+  devToolsEnhancer(),
+  applyMiddleware(sagaMiddleware)
+);
+
+sagaMiddleware.run(rootSagas);
 
 ReactDOM.render(
   <Provider store={store}>
